@@ -3,15 +3,15 @@
  * @returns number of love triangles
  */
 module.exports = function getLoveTrianglesCount(preferences=[]){
-  let count = 0
+  var count = 0
   // опрос спешони
-  for (var a=1; a <= preferences.length; a++){
+  for (var a=0; a < preferences.length; a++){
    // условие треугольника
-    if (preferences.indexOf(a,a+1) == a+1 && preferences.indexOf(a+1,a-1) == a-1 
-    && preferences.indexOf(a+2,a) == a){
+    if (preferences[preferences[preferences[a]-1]-1] == a+1){
     count++
     };
   };
+count=Math.floor(count/3)
 return count
 }
 /*  0  1  2   3 4 5   6 7 8   9 10 11
